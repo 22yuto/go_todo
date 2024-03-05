@@ -16,7 +16,7 @@ import (
 // ルーターの設定、サーバー起動
 func main() {
 	// MySQL接続開始
-	db, err := sql.Open("mysql", "user:userpassword@tcp(localhost:3306)/todo_db")
+	db, err := sql.Open("mysql", "user:user@tcp(localhost:13306)/todo_db")
 	if err != nil {
 		log.Fatal(err)
 	}
