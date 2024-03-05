@@ -1,4 +1,4 @@
-package mai
+package main
 
 import (
 	"database/sql"
