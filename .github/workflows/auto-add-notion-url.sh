@@ -10,7 +10,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
       - name: Debug Notion Response
         run: |
         curl -X POST "https://api.notion.com/v1/pages" \
