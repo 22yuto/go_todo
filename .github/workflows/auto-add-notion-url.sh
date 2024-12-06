@@ -11,6 +11,17 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v3
 
+      - name: Debug Notion Response
+        run: |
+        curl -X POST "https://api.notion.com/v1/pages" \
+        -H "Authorization: Bearer ${{ secrets.NOTION_API_KEY }}" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "filter": {
+            "property": "Status",
+            "status": "In Progress"
+          }
+        }' | tee notion_debug_response.json
       - name: Fetch Notion Ticket URL
         id: fetch-notion
         run: |
