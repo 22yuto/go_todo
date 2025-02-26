@@ -21,6 +21,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.Close()
+	// PRテスト変更
 
 	// NewTodoModelにDB接続オブジェクトを渡す
 	todoModel := models.NewTodoModel(db)
